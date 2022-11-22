@@ -12,7 +12,7 @@
 
 import os
 from pathlib import Path
-
+import streamlit as st
 
 from flask import Flask, jsonify, render_template, request
 
@@ -38,7 +38,7 @@ app = Flask(__name__)
 #Others cannot change this cookie as it needs the secret key. 
 #It's used as the key to encrypt the session - which can be stored in a cookie.
 #Cookies should be encrypted if they contain potentially sensitive information.
-#app.secret_key = "secret key"
+app.secret_key = "secret key"
 
 
 # same idea for dice and jaccard metrics
@@ -112,7 +112,7 @@ def index(image_id=""):
 
 
 if __name__ == "__main__":
-    app.run(port=4000, debug=False)
+    app.run(host = '0.0.0.0', port = 5000)
 # In[ ]:
 
 
