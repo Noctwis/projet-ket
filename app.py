@@ -74,13 +74,13 @@ print('Model loaded. Start serving...')
 
 @app.route('/', methods = ['GET'])
 def home_page():
-    return jsonify(
-            original_img_str=original_img_str,
-            labels_img_str=labels_img_str,
-            categories_img_str=categories_img_str
-        )
+ #   return jsonify(
+ #          original_img_str=original_img_str,
+ #          labels_img_str=labels_img_str,
+ #          categories_img_str=categories_img_str
+ #      )
 
-    return render_template(
+    return flask.render_template(
         "index.html",
         image_id=image_id,
         original_img_str=original_img_str,
@@ -125,7 +125,7 @@ def index(image_id=""):
 
 
 if __name__ == "__main__":
-    app.run(host = '0.0.0.0', port = 5001)
+    app.run(host = '0.0.0.0', port = 5002)
 # In[ ]:
 
 
