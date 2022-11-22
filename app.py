@@ -40,7 +40,7 @@ model_resnet.load_weights('model.hdf5')
 MODEL_NAME = "model_resnet"
 print('Model loaded. Start serving...')
 
-model = 'model_resnet'
+model = model_resnet
 
 def import_and_predict(image_data, model):
     
