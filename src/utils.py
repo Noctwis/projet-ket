@@ -35,7 +35,7 @@ model_resnet = Unet(BACKBONE, encoder_weights='imagenet', classes=8,activation='
 model_resnet.compile('Adam', loss=dice_loss, metrics=[dice_metric])
 
 # Loads the weights
-model_resnet.load_weights('model')
+model_resnet.load_weights('model.hdf5')
 
 
 #model.make_predict_function()          # Necessary
