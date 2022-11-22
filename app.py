@@ -25,7 +25,7 @@ import segmentation_models as sm
 from segmentation_models import Unet
 from segmentation_models import get_preprocessing
 
-DATASET_PATH = "C:/Users/jketk/Desktop/p8data"
+#DATASET_PATH = "C:/Users/jketk/Desktop/p8data"
 
 
 
@@ -56,16 +56,17 @@ def dice_loss(y_true, y_pred):
 
 
 # Model saved with Keras model.save()
-MODEL_PATH = 'model_Unet_resNet_2.hdf5'
+#MODEL_PATH = 'model_Unet_resNet_2.hdf5'
 
 # Load your trained model
 
-BACKBONE = 'resnet34'
+#BACKBONE = 'resnet34'
 model_resnet = Unet(BACKBONE, encoder_weights='imagenet', classes=8,activation='softmax')
 model_resnet.compile('Adam', loss=dice_loss, metrics=[dice_metric])
+#model = tf.keras.models.load_model('model_Unet_resNet_2-Copy1.hdf5')
 
 # Loads the weights
-model_resnet.load_weights('model')
+model_resnet.load_weights('model.hdf5')
 
 #model.make_predict_function()          # Necessary
 MODEL_NAME = "model_resnet"
