@@ -14,7 +14,7 @@ import os
 from pathlib import Path
 
 
-from flask import Flask, jsonify, render_template, request
+#from flask import Flask, jsonify, render_template, request
 
 import src.utils as utils
 
@@ -30,7 +30,7 @@ DATASET_PATH = "C:/Users/jketk/Desktop/p8data"
 
 
 #Create an app object using the Flask class. 
-app = Flask(__name__)
+#app = Flask(__name__)
 
 #Add reference fingerprint. 
 #Cookies travel with a signature that they claim to be legit. 
@@ -38,7 +38,7 @@ app = Flask(__name__)
 #Others cannot change this cookie as it needs the secret key. 
 #It's used as the key to encrypt the session - which can be stored in a cookie.
 #Cookies should be encrypted if they contain potentially sensitive information.
-app.secret_key = "secret key"
+#app.secret_key = "secret key"
 
 
 # same idea for dice and jaccard metrics
@@ -56,7 +56,7 @@ def dice_loss(y_true, y_pred):
 
 
 # Model saved with Keras model.save()
-#MODEL_PATH = 'model_Unet_resNet_2.hdf5'
+MODEL_PATH = 'model_Unet_resNet_2.hdf5'
 
 # Load your trained model
 
@@ -110,8 +110,8 @@ def index(image_id=""):
     )
 
 
-if __name__ == "__main__":
-    app.run(debug=False)
+#if __name__ == "__main__":
+ #   app.run(debug=False)
 
 
 # In[ ]:
