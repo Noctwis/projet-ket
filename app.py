@@ -9,6 +9,20 @@ import src.utils as utils
 import os
 from pathlib import Path
 
+
+# same idea for dice and jaccard metrics
+def dice_metric(y_true, y_pred):
+    smooth = 1.
+    y_true_f = K.flatten(y_true)
+    y_pred_f = K.flatten(y_pred)
+    intersection = K.sum(y_true_f * y_pred_f)
+    score = (2. * intersection + smooth) / (K.sum(y_true_f) + K.sum(y_pred_f) + smooth)
+    return score
+
+def dice_loss(y_true, y_pred):
+    loss = 1 - dice_metric(y_true, y_pred)
+    return loss
+
 # Model saved with Keras model.save()
 MODEL_PATH = 'model_Unet_resNet_2.hdf5'
 
@@ -42,18 +56,7 @@ def import_and_predict(image_data, model):
         
         return prediction
         
-# same idea for dice and jaccard metrics
-def dice_metric(y_true, y_pred):
-    smooth = 1.
-    y_true_f = K.flatten(y_true)
-    y_pred_f = K.flatten(y_pred)
-    intersection = K.sum(y_true_f * y_pred_f)
-    score = (2. * intersection + smooth) / (K.sum(y_true_f) + K.sum(y_pred_f) + smooth)
-    return score
 
-def dice_loss(y_true, y_pred):
-    loss = 1 - dice_metric(y_true, y_pred)
-    return loss
 
 
 st.write("""
