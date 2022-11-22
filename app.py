@@ -2,8 +2,24 @@ import numpy as np
 import streamlit as st
 from PIL import Image, ImageOps
 import tensorflow as tf
+# Model saved with Keras model.save()
+MODEL_PATH = 'model_Unet_resNet_2.hdf5'
 
-model = tf.keras.models.load_model('my_model.hdf5')
+# Load your trained model
+
+BACKBONE = 'resnet34'
+model_resnet = Unet(BACKBONE, encoder_weights='imagenet', classes=8,activation='softmax')
+model_resnet.compile('Adam', loss=dice_loss, metrics=[dice_metric])
+#model = tf.keras.models.load_model('model_Unet_resNet_2-Copy1.hdf5')
+
+# Loads the weights
+model_resnet.load_weights('model.hdf5')
+
+#model.make_predict_function()          # Necessary
+MODEL_NAME = "model_resnet"
+print('Model loaded. Start serving...')
+
+model = MODEL_NAME
 
 def import_and_predict(image_data, model):
     
