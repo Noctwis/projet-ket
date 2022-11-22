@@ -3,7 +3,7 @@ import streamlit as st
 from PIL import Image, ImageOps
 import tensorflow as tf
 
-model = tf.keras.models.load_model('model.hdf5')
+model = tf.keras.models.load_model('my_model.hdf5')
 
 def import_and_predict(image_data, model):
     
