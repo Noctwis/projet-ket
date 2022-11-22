@@ -2,6 +2,10 @@ import numpy as np
 import streamlit as st
 from PIL import Image, ImageOps
 import tensorflow as tf
+import segmentation_models as sm
+from segmentation_models import Unet
+from segmentation_models import get_preprocessing
+
 # Model saved with Keras model.save()
 MODEL_PATH = 'model_Unet_resNet_2.hdf5'
 
