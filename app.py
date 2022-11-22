@@ -1,17 +1,17 @@
-import os
-from pathlib import Path
-import streamlit as st
+#import os
+#from pathlib import Path
+#import streamlit as st
 
 from flask import Flask, jsonify, render_template, request
 
-import src.utils as utils
+#import src.utils as utils
 
 
-from keras.models import load_model
+#from keras.models import load_model
 
-import segmentation_models as sm
-from segmentation_models import Unet
-from segmentation_models import get_preprocessing
+#import segmentation_models as sm
+#from segmentation_models import Unet
+#from segmentation_models import get_preprocessing
 
 #DATASET_PATH = "C:/Users/jketk/Desktop/p8data"
 
