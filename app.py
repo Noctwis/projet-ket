@@ -14,7 +14,7 @@ import os
 from pathlib import Path
 
 
-#from flask import Flask, jsonify, render_template, request
+from flask import Flask, jsonify, render_template, request
 
 import src.utils as utils
 
@@ -30,7 +30,7 @@ from segmentation_models import get_preprocessing
 
 
 #Create an app object using the Flask class. 
-#app = Flask(__name__)
+app = Flask(__name__)
 
 #Add reference fingerprint. 
 #Cookies travel with a signature that they claim to be legit. 
@@ -73,8 +73,8 @@ MODEL_NAME = "model_resnet"
 print('Model loaded. Start serving...')
 
 
-#@app.route("/")
-#@app.route("/api")
+@app.route("/")
+@app.route("/api")
 def index(image_id=""):
     original_img_str, labels_img_str, categories_img_str = (
         None,
@@ -111,8 +111,8 @@ def index(image_id=""):
     )
 
 
-#if __name__ == "__main__":
- #   app.run(debug=False)
+if __name__ == "__main__":
+    app.run(debug=False)
 
 
 # In[ ]:

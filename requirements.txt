@@ -1,12 +1,31 @@
-streamlit==0.62.0
+Flask==2.2.2
+
+gunicorn==19.9.0
+
+itsdangerous==2.0.1
+
+Jinja2>=2.10.1
+
+MarkupSafe>=2.1.1
+
+Werkzeug==2.2.2
+
 matplotlib>=3.1.0
-scikit-learn >= 1.0
-numpy>=1.9.2
+
+pathlib>=1.0.1
+
+Pillow >= 7
+
 segmentation_models==1.0.1
-MarkupSafe==1.1.1
-Werkzeug>=1.0.1
-keras==2.3.1
-tensorflow==2.5.0
-keras_applications==1.0.8
-image-classifiers==1.0.0
-efficientnet==1.0.0
+
+tensorflow-cpu==2.8.0
+
+numpy>=1.9.2
+
+scikit-image[data] >= 0.19
+
+scikit-learn >= 1.0
+
+ 
+
+protobuf==3.20.*
