@@ -81,11 +81,11 @@ def home_page():
  #      )
 
     return flask.render_template(
-        "index.html",
-        image_id=image_id,
-        original_img_str=original_img_str,
-        labels_img_str=labels_img_str,
-        categories_img_str=categories_img_str
+        "index.html"
+#        image_id=image_id,
+#        original_img_str=original_img_str,
+#        labels_img_str=labels_img_str,
+#        categories_img_str=categories_img_str
     )
 
 def index(image_id=""):
@@ -125,7 +125,7 @@ def index(image_id=""):
 
 
 if __name__ == "__main__":
-    app.run(host = '0.0.0.0', port = 5002)
+    app.run(host = '0.0.0.0', port = 5003)
 # In[ ]:
 
 
