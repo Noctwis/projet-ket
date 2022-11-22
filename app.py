@@ -73,8 +73,8 @@ MODEL_NAME = "model_resnet"
 print('Model loaded. Start serving...')
 
 
-@app.route("/")
-@app.route("/api")
+#@app.route("/")
+#@app.route("/api")
 def index(image_id=""):
     original_img_str, labels_img_str, categories_img_str = (
         None,
