@@ -60,7 +60,7 @@ def dice_loss(y_true, y_pred):
 
 # Load your trained model
 
-#BACKBONE = 'resnet34'
+BACKBONE = 'resnet34'
 model_resnet = Unet(BACKBONE, encoder_weights='imagenet', classes=8,activation='softmax')
 model_resnet.compile('Adam', loss=dice_loss, metrics=[dice_metric])
 #model = tf.keras.models.load_model('model_Unet_resNet_2-Copy1.hdf5')
