@@ -20,7 +20,7 @@ segmentation_models==1.0.1
 
 tensorflow-cpu==2.8.0
 
-numpy>=1.9.2
+numpy==1.21.6
 
 scikit-image[data] >= 0.19
 
